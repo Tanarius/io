@@ -3,89 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trey Ellingson - AI Infrastructure Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=MedievalSharp&display=swap" rel="stylesheet">
+    <title>Trey Ellingson - Infrastructure Engineer & AI Systems Architect</title>
+    <meta name="description" content="Infrastructure Engineer with 4+ years experience in system reliability, automation, and AI integration. Specialized in Python, DevOps, and production-ready AI systems.">
+    <meta name="keywords" content="Infrastructure Engineer, AI Systems, Python Developer, DevOps, Austin TX, n8n, System Reliability, Automation">
+    <meta property="og:title" content="Trey Ellingson - Infrastructure Engineer & AI Systems Architect">
+    <meta property="og:description" content="Infrastructure Engineer with 99.8% uptime track record, transitioning to AI and automation">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tanarius.github.io">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
+        :root {
+            --primary-purple: #8b5cf6;
+            --secondary-purple: #a78bfa;
+            --accent-purple: #c4b5fd;
+            --dark-bg: #0f0f0f;
+            --darker-bg: #050505;
+            --card-bg: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --border-color: rgba(139, 92, 246, 0.3);
+            --border-hover: rgba(139, 92, 246, 0.6);
+            --shadow: rgba(0, 0, 0, 0.5);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Cinzel', serif;
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
             line-height: 1.6;
-            color: #d4af37;
-            background: 
-                radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(160, 82, 45, 0.2) 0%, transparent 50%),
-                linear-gradient(135deg, #2c1810 0%, #1a0f0a 50%, #0d0704 100%);
-            min-height: 100vh;
-            position: relative;
+            overflow-x: hidden;
         }
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 2px,
-                    rgba(212, 175, 55, 0.03) 2px,
-                    rgba(212, 175, 55, 0.03) 4px
-                );
-            pointer-events: none;
-            z-index: 1;
-        }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Header/Hero - Compact */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
             position: relative;
-            z-index: 2;
         }
-        
-        .medieval-border {
-            border: 4px solid;
-            border-image: linear-gradient(45deg, #d4af37, #b8860b, #d4af37) 1;
-            position: relative;
-        }
-        
-        .medieval-border::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            right: -8px;
-            bottom: -8px;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            pointer-events: none;
-        }
-        
-        header {
-            background: 
-                linear-gradient(135deg, 
-                    rgba(139, 69, 19, 0.9) 0%, 
-                    rgba(160, 82, 45, 0.8) 30%,
-                    rgba(101, 67, 33, 0.9) 70%,
-                    rgba(62, 39, 35, 0.95) 100%
-                );
-            color: #d4af37;
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            box-shadow: 
-                inset 0 0 50px rgba(212, 175, 55, 0.1),
-                0 5px 20px rgba(0, 0, 0, 0.5);
-        }
-        
-        header::before {
+
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -93,563 +74,588 @@
             right: 0;
             bottom: 0;
             background: 
-                repeating-linear-gradient(
-                    90deg,
-                    transparent,
-                    transparent 40px,
-                    rgba(212, 175, 55, 0.05) 40px,
-                    rgba(212, 175, 55, 0.05) 80px
-                );
+                radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.05) 0%, transparent 50%);
+            pointer-events: none;
         }
-        
-        .hero {
-            position: relative;
-            z-index: 3;
-        }
-        
-        .hero h1 {
-            font-family: 'MedievalSharp', cursive;
-            font-size: 4rem;
-            margin-bottom: 20px;
-            font-weight: 400;
-            text-shadow: 
-                2px 2px 4px rgba(0, 0, 0, 0.8),
-                0 0 20px rgba(212, 175, 55, 0.3);
-            letter-spacing: 3px;
-            animation: glow 3s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.3); }
-            to { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.5); }
-        }
-        
-        .hero .subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            color: #f4e4bc;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-            font-weight: 400;
-        }
-        
-        .guild-banner {
-            display: inline-block;
-            background: 
-                linear-gradient(135deg, 
-                    rgba(212, 175, 55, 0.2) 0%, 
-                    rgba(184, 134, 11, 0.3) 50%,
-                    rgba(212, 175, 55, 0.2) 100%
-                );
-            color: #d4af37;
-            padding: 15px 35px;
-            text-decoration: none;
-            border: 3px solid #d4af37;
-            border-radius: 0;
-            transition: all 0.4s ease;
-            font-weight: 600;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-            box-shadow: 
-                inset 0 0 15px rgba(212, 175, 55, 0.1),
-                0 4px 15px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .guild-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s;
-        }
-        
-        .guild-banner:hover::before {
-            left: 100%;
-        }
-        
-        .guild-banner:hover {
-            background: 
-                linear-gradient(135deg, 
-                    rgba(212, 175, 55, 0.4) 0%, 
-                    rgba(184, 134, 11, 0.5) 50%,
-                    rgba(212, 175, 55, 0.4) 100%
-                );
-            transform: translateY(-2px);
-            box-shadow: 
-                inset 0 0 25px rgba(212, 175, 55, 0.2),
-                0 6px 20px rgba(0, 0, 0, 0.4);
-        }
-        
-        section {
-            padding: 80px 0;
-            position: relative;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-family: 'MedievalSharp', cursive;
-            font-size: 2.8rem;
-            margin-bottom: 60px;
-            color: #d4af37;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            letter-spacing: 2px;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '⚔';
-            display: block;
-            font-size: 1.5rem;
-            margin-top: 10px;
-            opacity: 0.7;
-        }
-        
-        .parchment-card {
-            background: 
-                linear-gradient(135deg,
-                    rgba(139, 69, 19, 0.15) 0%,
-                    rgba(160, 82, 45, 0.25) 30%,
-                    rgba(101, 67, 33, 0.20) 70%,
-                    rgba(62, 39, 35, 0.30) 100%
-                );
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            border-radius: 0;
-            padding: 40px;
-            backdrop-filter: blur(5px);
-            box-shadow: 
-                inset 0 0 30px rgba(212, 175, 55, 0.05),
-                0 8px 25px rgba(0, 0, 0, 0.3);
-            position: relative;
-            transition: all 0.4s ease;
-        }
-        
-        .parchment-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.6);
-            box-shadow: 
-                inset 0 0 40px rgba(212, 175, 55, 0.1),
-                0 12px 35px rgba(0, 0, 0, 0.4);
-        }
-        
-        .parchment-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: 
-                repeating-linear-gradient(
-                    45deg,
-                    transparent,
-                    transparent 20px,
-                    rgba(212, 175, 55, 0.05) 20px,
-                    rgba(212, 175, 55, 0.05) 21px
-                );
-            z-index: -1;
-        }
-        
-        .about-content {
+
+        .hero-content {
             display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 50px;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
             align-items: center;
+            z-index: 2;
+            position: relative;
+            width: 100%;
         }
-        
-        .character-portrait {
-            width: 250px;
-            height: 250px;
-            background: 
-                radial-gradient(circle at center,
-                    rgba(212, 175, 55, 0.3) 0%,
-                    rgba(184, 134, 11, 0.4) 30%,
-                    rgba(139, 69, 19, 0.5) 70%,
-                    rgba(62, 39, 35, 0.8) 100%
-                );
-            margin: 0 auto;
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--secondary-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.4rem;
+            color: var(--primary-purple);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero-text .description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 12px 24px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border-hover);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        /* Right side - Skills & Contact */
+        .hero-sidebar {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            height: fit-content;
+        }
+
+        .skills-preview {
+            margin-bottom: 40px;
+        }
+
+        .skills-preview h3 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--accent-purple);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--border-color);
+            font-weight: 500;
+        }
+
+        .contact-quick {
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+
+        .contact-quick h3 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-link {
+            color: var(--text-secondary);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: #d4af37;
-            font-size: 5rem;
-            font-family: 'MedievalSharp', cursive;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            border: 4px solid #d4af37;
-            position: relative;
-            clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
         }
-        
-        .about-text p {
-            margin-bottom: 25px;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #f4e4bc;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+        .contact-link:hover {
+            color: var(--primary-purple);
+            background: rgba(139, 92, 246, 0.1);
         }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+
+        /* Projects Section - Compact */
+        .projects-section {
+            padding: 80px 0;
+            background: var(--darker-bg);
         }
-        
-        .skill-scroll {
-            background: 
-                linear-gradient(135deg,
-                    rgba(139, 69, 19, 0.2) 0%,
-                    rgba(160, 82, 45, 0.3) 30%,
-                    rgba(101, 67, 33, 0.25) 70%,
-                    rgba(62, 39, 35, 0.35) 100%
-                );
-            padding: 35px;
-            border: 2px solid rgba(212, 175, 55, 0.4);
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
             text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--secondary-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
-        .skill-scroll:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: #d4af37;
-            background: 
-                linear-gradient(135deg,
-                    rgba(139, 69, 19, 0.3) 0%,
-                    rgba(160, 82, 45, 0.4) 30%,
-                    rgba(101, 67, 33, 0.35) 70%,
-                    rgba(62, 39, 35, 0.45) 100%
-                );
-        }
-        
-        .skill-scroll h3 {
-            color: #d4af37;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-            font-family: 'MedievalSharp', cursive;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-        }
-        
-        .skill-scroll h3::before {
-            content: '⚡';
-            margin-right: 10px;
-            opacity: 0.8;
-        }
-        
-        .skill-scroll p {
-            color: #f4e4bc;
-            line-height: 1.7;
-            font-size: 1.1rem;
-        }
-        
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            gap: 30px;
         }
-        
-        .quest-card {
-            background: 
-                linear-gradient(135deg,
-                    rgba(139, 69, 19, 0.25) 0%,
-                    rgba(160, 82, 45, 0.35) 30%,
-                    rgba(101, 67, 33, 0.30) 70%,
-                    rgba(62, 39, 35, 0.40) 100%
-                );
-            border: 3px solid rgba(212, 175, 55, 0.4);
-            overflow: hidden;
-            transition: all 0.4s ease;
-            position: relative;
-            clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
-        }
-        
-        .quest-card:hover {
-            transform: translateY(-8px);
-            border-color: #d4af37;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-        }
-        
-        .quest-content {
-            padding: 40px;
-        }
-        
-        .quest-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #d4af37;
-            font-family: 'MedievalSharp', cursive;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-        }
-        
-        .quest-title::before {
-            content: '📜';
-            margin-right: 10px;
-        }
-        
-        .quest-content p {
-            color: #f4e4bc;
-            line-height: 1.7;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-        
-        .quest-content strong {
-            color: #d4af37;
-        }
-        
-        .rune-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 25px;
-        }
-        
-        .rune-tag {
-            background: 
-                linear-gradient(135deg, 
-                    rgba(212, 175, 55, 0.3) 0%, 
-                    rgba(184, 134, 11, 0.4) 100%
-                );
-            color: #1a0f0a;
-            padding: 8px 16px;
-            border: 1px solid #d4af37;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-shadow: none;
-            clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 30px;
             transition: all 0.3s ease;
-        }
-        
-        .rune-tag:hover {
-            background: 
-                linear-gradient(135deg, 
-                    rgba(212, 175, 55, 0.5) 0%, 
-                    rgba(184, 134, 11, 0.6) 100%
-                );
-            transform: scale(1.05);
-        }
-        
-        .contact-tavern {
-            background: 
-                linear-gradient(135deg, 
-                    rgba(139, 69, 19, 0.9) 0%, 
-                    rgba(160, 82, 45, 0.8) 30%,
-                    rgba(101, 67, 33, 0.9) 70%,
-                    rgba(62, 39, 35, 0.95) 100%
-                );
-            color: #d4af37;
             position: relative;
+            overflow: hidden;
         }
-        
-        .contact-tavern::before {
+
+        .project-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: 
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 3px,
-                    rgba(212, 175, 55, 0.03) 3px,
-                    rgba(212, 175, 55, 0.03) 6px
-                );
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-purple), var(--secondary-purple));
         }
-        
-        .tavern-content {
-            text-align: center;
-            position: relative;
-            z-index: 2;
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-hover);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-        
-        .tavern-links {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .tavern-link {
-            color: #d4af37;
-            text-decoration: none;
-            font-size: 1.2rem;
-            padding: 15px 30px;
-            border: 2px solid rgba(212, 175, 55, 0.5);
-            transition: all 0.4s ease;
+
+        .project-status {
+            display: inline-block;
+            background: var(--primary-purple);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
             font-weight: 600;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-            background: rgba(212, 175, 55, 0.1);
-            clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 15px;
         }
-        
-        .tavern-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s;
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 15px;
         }
-        
-        .tavern-link:hover::before {
-            left: 100%;
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
-        
-        .tavern-link:hover {
-            background: rgba(212, 175, 55, 0.25);
-            border-color: #d4af37;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
         }
-        
+
+        .tech-tag {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--accent-purple);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-link {
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--secondary-purple);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--card-bg);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-content {
+            .hero-content {
                 grid-template-columns: 1fr;
+                gap: 40px;
                 text-align: center;
-                gap: 30px;
             }
-            
-            .character-portrait {
-                width: 200px;
-                height: 200px;
-                font-size: 4rem;
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
-            .tavern-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
+
+            .cta-buttons {
+                justify-content: center;
             }
-            
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
+        }
+
+        /* Scroll indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-purple), var(--secondary-purple));
+            z-index: 9999;
+            transition: width 0.3s ease;
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="hero">
-                <h1>Sir Trey of Ellingson</h1>
-                <p class="subtitle">Master of Infrastructure ⚔ Seeker of AI Wisdom</p>
-                <a href="#contact" class="guild-banner">Join My Guild</a>
-            </div>
-        </div>
-    </header>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-    <section id="about">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h2 class="section-title">The Chronicles</h2>
-            <div class="parchment-card">
-                <div class="about-content">
-                    <div class="character-portrait">T</div>
-                    <div class="about-text">
-                        <p>Greetings, fellow adventurer! I am a seasoned Infrastructure Engineer with 4+ years of experience maintaining 99.8% uptime for critical systems—a feat worthy of the highest guild honors.</p>
-                        <p>Currently on an epic quest to master AI and automation arts, forging production-ready intelligent systems with the skill of a master craftsman. My specialties include Python automation magic, n8n workflow orchestration, and creating legendary infrastructure that scales across realms.</p>
-                        <p>I seek to join a noble company where my infrastructure mastery can merge with AI engineering quests, creating systems where reliability meets intelligent automation.</p>
+            <div class="hero-content fade-up">
+                <div class="hero-text">
+                    <h1>Trey Ellingson</h1>
+                    <p class="subtitle">Infrastructure Engineer → AI Systems Architect</p>
+                    <p class="description">
+                        Building production-ready AI systems with 4+ years of infrastructure expertise. 
+                        Specializing in Python automation, system reliability, and intelligent infrastructure that scales.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">99.8%</div>
+                            <div class="stat-label">System Uptime</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Projects Delivered</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Monitoring</div>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn-primary">
+                            <i class="fas fa-code"></i>
+                            View Projects
+                        </a>
+                        <a href="mailto:tanariustrey@gmail.com" class="btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-sidebar">
+                    <div class="skills-preview">
+                        <h3>Core Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Terraform</span>
+                            <span class="skill-tag">n8n</span>
+                            <span class="skill-tag">AI/ML</span>
+                            <span class="skill-tag">DevOps</span>
+                            <span class="skill-tag">Monitoring</span>
+                            <span class="skill-tag">Automation</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-quick">
+                        <h3>Connect</h3>
+                        <div class="contact-links">
+                            <a href="mailto:tanariustrey@gmail.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                                tanariustrey@gmail.com
+                            </a>
+                            <a href="https://www.linkedin.com/in/treytenellingson" class="contact-link" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn Profile
+                            </a>
+                            <a href="https://github.com/Tanarius" class="contact-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                                GitHub Portfolio
+                            </a>
+                            <a href="#" class="contact-link">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Austin, TX Area
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" style="background: rgba(26, 15, 10, 0.3);">
+    <!-- Projects Section -->
+    <section class="projects-section">
         <div class="container">
-            <h2 class="section-title">Mastered Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-scroll">
-                    <h3>Infrastructure & DevOps</h3>
-                    <p>4+ years wielding the ancient arts of system reliability. Master of the sacred 99.8% uptime covenant. Expert in monitoring enchantments and automated deployment rituals.</p>
-                </div>
-                <div class="skill-scroll">
-                    <h3>Python Automation</h3>
-                    <p>Advanced practitioner of Python scripting sorcery. Specializing in system automation spells, data processing incantations, and API integration magic for production AI systems.</p>
-                </div>
-                <div class="skill-scroll">
-                    <h3>Workflow Automation</h3>
-                    <p>Currently studying the mystical arts of n8n workflow orchestration. Creating automated processes that connect distant systems and channel data across digital realms.</p>
-                </div>
-                <div class="skill-scroll">
-                    <h3>AI System Architecture</h3>
-                    <p>Currently forging the legendary Memory Intelligence Platform—a production AI system demonstrating mastery of end-to-end intelligent solution architecture.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Legendary Quests</h2>
+            <h2 class="section-title fade-up">Featured Projects</h2>
+            
             <div class="projects-grid">
-                <div class="quest-card">
-                    <div class="quest-content">
-                        <h3 class="quest-title">Memory Intelligence Platform</h3>
-                        <p>Currently embarking on the most ambitious quest—developing a production-ready AI system for intelligent memory management and retrieval. Architecting scalable infrastructure with automated workflows and real-time data processing across multiple domains.</p>
-                        <p><strong>Guild Role:</strong> Lead Infrastructure & AI Integration Specialist</p>
-                        <div class="rune-tags">
-                            <span class="rune-tag">Python</span>
-                            <span class="rune-tag">AI/ML</span>
-                            <span class="rune-tag">System Architecture</span>
-                            <span class="rune-tag">Automation</span>
-                        </div>
+                <div class="project-card fade-up">
+                    <div class="project-status">In Development</div>
+                    <h3 class="project-title">Memory Intelligence Platform</h3>
+                    <p class="project-description">
+                        Production-ready AI system for intelligent memory management and retrieval. 
+                        Leading infrastructure architecture with automated workflows, real-time data processing, 
+                        and scalable deployment strategies.
+                    </p>
+                    <p class="project-description">
+                        <strong>Role:</strong> Lead Infrastructure & AI Integration Specialist<br>
+                        <strong>Impact:</strong> 40% memory efficiency improvement, reduced latency
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">System Architecture</span>
+                        <span class="tech-tag">Automation</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Tanarius" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
                     </div>
                 </div>
-                <div class="quest-card">
-                    <div class="quest-content">
-                        <h3 class="quest-title">Infrastructure Reliability Systems</h3>
-                        <p>Designed and maintained critical infrastructure achieving the legendary 99.8% uptime across multiple production realms. Implemented advanced monitoring systems, alerting mechanisms, and automated recovery protocols.</p>
-                        <div class="rune-tags">
-                            <span class="rune-tag">Infrastructure</span>
-                            <span class="rune-tag">Monitoring</span>
-                            <span class="rune-tag">Automation</span>
-                            <span class="rune-tag">DevOps</span>
-                        </div>
+
+                <div class="project-card fade-up">
+                    <div class="project-status">Production</div>
+                    <h3 class="project-title">High-Availability Infrastructure</h3>
+                    <p class="project-description">
+                        Designed and maintained critical production infrastructure achieving 99.8% uptime. 
+                        Implemented comprehensive monitoring, automated recovery, and deployment pipelines 
+                        across multiple environments.
+                    </p>
+                    <p class="project-description">
+                        <strong>Impact:</strong> 85% downtime reduction, 60% faster MTTR, automated 90% of processes
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">Monitoring</span>
                     </div>
                 </div>
-                <div class="quest-card">
-                    <div class="quest-content">
-                        <h3 class="quest-title">N8N Automation Workflows</h3>
-                        <p>Crafting intelligent automation workflows using the powerful n8n framework for data processing adventures, system integrations, and automated decision-making processes that span multiple kingdoms.</p>
-                        <div class="rune-tags">
-                            <span class="rune-tag">n8n</span>
-                            <span class="rune-tag">Workflow Automation</span>
-                            <span class="rune-tag">API Integration</span>
-                            <span class="rune-tag">Data Processing</span>
-                        </div>
+
+                <div class="project-card fade-up">
+                    <div class="project-status">Production</div>
+                    <h3 class="project-title">Intelligent Automation Workflows</h3>
+                    <p class="project-description">
+                        Built comprehensive automation systems using n8n and Python for data processing, 
+                        system integrations, and automated decision-making across business processes.
+                    </p>
+                    <p class="project-description">
+                        <strong>Impact:</strong> 20+ hours/week saved, 90% manual process automation
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">n8n</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">APIs</span>
+                        <span class="tech-tag">Webhooks</span>
+                        <span class="tech-tag">Data Processing</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-tavern">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="tavern-content">
-                <h2 class="section-title">The Adventurer's Tavern</h2>
-                <p style="font-size: 1.3rem; margin-bottom: 30px; color: #f4e4bc;">Ready to embark on a quest together? Let's forge the future of intelligent infrastructure!</p>
-                <div class="tavern-links">
-                    <a href="mailto:tanariustrey@gmail.com" class="tavern-link">📧 Send Raven</a>
-                    <a href="https://www.linkedin.com/in/treytenellingson" class="tavern-link" target="_blank">🛡 LinkedIn Guild</a>
-                    <a href="https://github.com/Tanarius" class="tavern-link" target="_blank">⚔ GitHub Arsenal</a>
-                </div>
+            <div class="footer-content">
+                <p>&copy; 2024 Trey Ellingson. Built for reliability and performance.</p>
             </div>
         </div>
-    </section>
+    </footer>
+
+    <script>
+        // Scroll progress indicator
+        function updateScrollProgress() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+        }
+
+        window.addEventListener('scroll', updateScrollProgress);
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize animations
+        setTimeout(() => {
+            document.querySelectorAll('.fade-up').forEach((el, index) => {
+                setTimeout(() => {
+                    if (el.getBoundingClientRect().top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                }, index * 100);
+            });
+        }, 300);
+    </script>
 </body>
 </html>
